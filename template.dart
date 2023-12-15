@@ -28,4 +28,20 @@ class Utils {
   static List<String> characters(String input) {
     return input.runes.map((e) => String.fromCharCode(e)).toList();
   }
+
+  static T? firstWhereOrNull<T>(List<T> lista, bool Function(T) test) {
+    try {
+      return lista.firstWhere(test);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  static T? lastWhereOrNull<T>(List<T> lista, bool Function(T) test) {
+    try {
+      return lista.lastWhere(test);
+    } catch (error) {
+      return null;
+    }
+  }
 }

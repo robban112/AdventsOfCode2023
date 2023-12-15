@@ -6,7 +6,7 @@ int getFirstLast(String input) {
   final characters = Utils.characters(input);
   String? first = characters.firstWhere((element) => int.tryParse(element) != null);
   String? last = characters.lastWhere((element) => int.tryParse(element) != null);
-  print("$input : $first$last");
+  //print("$input : $first$last");
   return int.parse("${first}$last");
 }
 
