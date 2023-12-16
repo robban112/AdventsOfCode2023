@@ -39,8 +39,29 @@ bool isGamePossible(List<Set> game, int maxRed, int maxBlue, int maxGreen) {
   return answer;
 }
 
+int minAmountSum(List<Set> game) {
+  int minRed = 0, minGreen = 0, minBlue = 0;
+  game.forEach((set) {
+    if (set.numBlue > minBlue) minBlue = set.numBlue;
+    if (set.numRed > minRed) minRed = set.numRed;
+    if (set.numGreen > minGreen) minGreen = set.numGreen;
+  });
+  return minRed * minGreen * minBlue;
+}
+
 void main() {
   final lines = FileReader.readFile();
+  partTwo(lines);
+}
+
+void partTwo(List<String> lines) {
+  final answer = lines
+      .map(parseInput)
+      .fold(0, (prev, game) => prev + minAmountSum(game.$2));
+  print(answer);
+}
+
+void partOne(List<String> lines) {
   final maxRed = 12;
   final maxGreen = 13;
   final maxBlue = 14;
