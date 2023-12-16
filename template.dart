@@ -16,7 +16,7 @@ class FileReader {
       String fileContent = file.readAsStringSync();
 
       // Display the file content
-      return fileContent.split("\n");
+      return fileContent.split("\n").map((e) => Utils.cleanString(e)).toList();
     } catch (e) {
       print('An error occurred: $e');
       rethrow;
@@ -42,6 +42,20 @@ class Utils {
       return lista.lastWhere(test);
     } catch (error) {
       return null;
+    }
+  }
+
+  static String cleanString(String input) {
+    return input.replaceAll('\r', '');
+  }
+}
+
+class Logger {
+  static bool debug = false;
+
+  static void log(String text) {
+    if (debug) {
+      print(text);
     }
   }
 }
