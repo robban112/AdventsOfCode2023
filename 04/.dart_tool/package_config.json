@@ -1,0 +1,14 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "my_console_app",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    }
+  ],
+  "generated": "2023-12-17T09:28:39.557519Z",
+  "generator": "pub",
+  "generatorVersion": "3.2.3"
+}

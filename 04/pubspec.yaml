@@ -1,0 +1,21 @@
+name: my_console_app
+description: A Dart console application
+version: 1.0.0
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  # Add any dependencies your console application needs here.
+
+dev_dependencies:
+  # Add any development dependencies here.
+
+# The executables section is used to define the main entry point for your application.
+# Replace 'bin/my_console_app.dart' with the actual path to your Dart file.
+executables:
+  my_console_app:
+    script: bin/my_console_app.dart
+
+assets:
+  - input/input.txt
