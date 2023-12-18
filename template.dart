@@ -48,6 +48,10 @@ class Utils {
   static String cleanString(String input) {
     return input.replaceAll('\r', '');
   }
+
+  static List<int> lineToListInt(String input) {
+    return input.split(" ").map((e) => int.tryParse(e)).nonNulls.toList();
+  }
 }
 
 class Logger {
