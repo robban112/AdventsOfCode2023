@@ -52,6 +52,20 @@ class Utils {
   static List<int> lineToListInt(String input) {
     return input.split(" ").map((e) => int.tryParse(e)).nonNulls.toList();
   }
+
+  static List<List<int>> groupList(List<int> inputList, int groupBy) {
+    List<List<int>> result = [];
+
+    for (int i = 0; i < inputList.length; i += groupBy) {
+      int end = i + groupBy;
+      if (end > inputList.length) {
+        end = inputList.length;
+      }
+      result.add(inputList.sublist(i, end));
+    }
+
+    return result;
+  }
 }
 
 class Logger {
